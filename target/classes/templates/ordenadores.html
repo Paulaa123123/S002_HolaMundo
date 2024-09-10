@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/ordenadores.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div th:include="plantilla.html::cabecera"></div>
+
+
+	<div th:include="plantilla.html::menu"></div>
+
+	<main>
+		<section>
+			<table>
+				<thead>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>RAM</th>
+					<th>HDD</th>
+					<th>Precio</th>
+					<th>Marca</th>
+				</thead>
+
+				<tbody>
+					<tr th:each="elem : ${atr_lista_ordenadores}">
+						<td th:text="${elem.id}"></td>
+						<td th:text="${elem.nombre}"></td>
+						<td th:text="${elem.ram}"></td>
+						<td th:text="${elem.hdd}"></td>
+						<td th:text="${elem.precio}"></td>
+						<td th:text="${elem.marca.nombre}"></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</section>
+	</main>
+
+
+	<div th:include="plantilla.html::footer"></div>
+
+
+</body>
+
+</html>

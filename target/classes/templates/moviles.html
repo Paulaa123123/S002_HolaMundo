@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/moviles.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div th:include="plantilla.html::cabecera"></div>
+
+
+	<div th:include="plantilla.html::menu"></div>
+
+	<main>
+		<section>
+			<table>
+				<thead>
+					<th>ID</th>
+					<th>Modelo</th>
+					<th>Precio</th>
+					<th>Marca</th>
+				</thead>
+
+				<tbody>
+					<tr th:each="elem : ${atr_lista_moviles}">
+						<td th:text = "${elem.id}"></td>
+						<td th:text = "${elem.modelo}"></td>
+						<td th:text = "${elem.precio} + ' euros'"></td>
+						<td th:text = "${elem.marca.nombre}"></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</section>
+	</main>
+
+
+	<div th:include="plantilla.html::footer"></div>
+
+
+</body>
+
+</html>

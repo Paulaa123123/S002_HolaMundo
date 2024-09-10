@@ -1,0 +1,47 @@
+<!--Plantilla de la cabecera-->
+
+<div th:fragment="cabecera">
+	<header>
+		<div id="header_izq">
+			<h1>Juegolandia</h1>
+		</div>
+
+
+		<div id="header_der">
+			<img src="images/facebook.png" alt="acceso a facebook" width="48px" height="48px">
+			<img src="images/instagram.png" alt="acceso a instagram" width="48px" height="48px">
+		</div>
+	</header>
+</div>
+
+
+<!-----===###===----->
+<!--Plantilla del menu-->
+
+<div th:fragment="menu">
+	<nav>
+		<ul>
+			<li>
+				<a href="/menuInicio" class="enlace_menu">Inicio</a>
+			</li>
+			<li>
+				<a href="/menuMoviles" class="enlace_menu">Moviles</a>
+			</li>
+			<li>
+				<a href="/menuOrdenadores" class="enlace_menu">Ordenadores</a>
+			</li>
+			<li>
+				<a href="/menuContacto" class="enlace_menu">Contacto</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+<!-----===###===----->
+<!--Plantilla del pie de pagina-->
+
+<div th:fragment="footer">
+	<footer>
+		<p>Designed by: Ipartek S.C</p>
+	</footer>
+</div>

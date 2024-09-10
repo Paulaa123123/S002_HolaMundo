@@ -36,6 +36,32 @@
 
 			</form>
 		</section>
+
+		<section>
+			<form method="post" th:action="@{/adminGuardarOrdenador}" th:object="${obj_ordenador}">
+				<label>Nombre: </label>
+				<!-- * hace referencia al th:object-->
+				<input type="text" th:field="*{nombre}" />
+				<br />
+
+				<label>Ram: </label>
+				<input type="text" th:field="*{ram}" />
+				<br />
+
+				<label>Hdd: </label>
+				<input type="text" th:field="*{hdd}" />
+				<br />
+
+				<label>Marca: </label>
+				<select th:field="*{marca.id}">
+					<option th:each="elem :${atr_lista_marcas}" th:text="${elem.nombre}" th:value="${elem.id}">
+					</option>
+				</select>
+				<br />
+				<input type="submit" value="Agregar">
+
+			</form>
+		</section>
 	</main>
 
 

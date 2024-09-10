@@ -23,7 +23,7 @@ public class Movil {
 	@Column(name = "precio")
 	private double precio;
 
-// Muchos moviles tienen una misma marca 
+	// Muchos moviles tienen una misma marca
 	@ManyToOne
 	private Marca marca;
 
@@ -79,7 +79,5 @@ public class Movil {
 	public String toString() {
 		return "Movil [id=" + id + ", modelo=" + modelo + ", precio=" + precio + ", marca=" + marca + "]";
 	}
-	
-	
 
 }

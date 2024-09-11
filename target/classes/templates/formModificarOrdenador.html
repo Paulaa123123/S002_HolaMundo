@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/contacto.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div th:include="plantilla.html::cabecera"></div>
+
+
+	<div th:include="plantilla.html::menu"></div>
+
+	<main>
+		<section>
+			<form method="post" th:action="@{/adminGuardarOrdenador}" th:object="${obj_ordenador}">
+
+				<label>Id: </label>
+				<input type="text" th:field="*{id}" readonly />
+				<br />
+
+				<label>Nombre: </label>
+				<input type="text" th:field="*{nombre}" />
+				<br />
+
+				<label>Ram: </label>
+				<input type="text" th:field="*{ram}" />
+				<br />
+
+				<label>Hdd: </label>
+				<input type="text" th:field="*{hdd}" />
+				<br />
+
+				<label>Precio: </label>
+				<input type="text" th:field="*{precio}" />
+				<br />
+
+				<label>Marca: </label>
+				<select th:field="*{marca.id}">
+					<option th:each="elem :${atr_lista_marcas}" th:text="${elem.nombre}" th:value="${elem.id}">
+					</option>
+				</select>
+				<br />
+				<input type="submit" value="Modificar">
+
+			</form>
+		</section>
+	</main>
+
+	<div th:include="plantilla.html::footer"></div>
+
+</body>
+
+</html>

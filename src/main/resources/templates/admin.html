@@ -16,6 +16,9 @@
 
 	<main>
 		<section>
+
+			<h1>MOVILES</h1>
+
 			<form method="post" th:action="@{/adminGuardarMovil}" th:object="${obj_movil}">
 				<label>Modelo: </label>
 				<!-- * hace referencia al th:object-->
@@ -35,9 +38,39 @@
 				<input type="submit" value="Agregar">
 
 			</form>
+
+			<br />
+
+			<table>
+				<thead>
+					<th>ID</th>
+					<th>Modelo</th>
+					<th>Precio</th>
+					<th>Marca</th>
+					<th>Opciones</th>
+				</thead>
+
+				<tbody>
+					<tr th:each="elem : ${atr_lista_moviles}">
+						<td th:text="${elem.id}"></td>
+						<td th:text="${elem.modelo}"></td>
+						<td th:text="${elem.precio} + ' euros'"></td>
+						<td th:text="${elem.marca.nombre}"></td>
+						<td>
+							<a th:href="@{/adminBorrarMovil(id=${elem.id})}">Borrar</a>
+							<a th:href="@{/adminModificarMovil(id=${elem.id})}">Modificar</a>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
 		</section>
+		<br />
 
 		<section>
+
+			<h1>ORDENADORES</h1>
+
 			<form method="post" th:action="@{/adminGuardarOrdenador}" th:object="${obj_ordenador}">
 				<label>Nombre: </label>
 				<!-- * hace referencia al th:object-->
@@ -61,6 +94,36 @@
 				<input type="submit" value="Agregar">
 
 			</form>
+
+			<br />
+
+			<table>
+				<thead>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>RAM</th>
+					<th>HDD</th>
+					<th>Precio</th>
+					<th>Marca</th>
+					<th>Opciones</th>
+				</thead>
+
+				<tbody>
+					<tr th:each="elem : ${atr_lista_ordenadores}">
+						<td th:text="${elem.id}"></td>
+						<td th:text="${elem.nombre}"></td>
+						<td th:text="${elem.ram}"></td>
+						<td th:text="${elem.hdd}"></td>
+						<td th:text="${elem.precio}"></td>
+						<td th:text="${elem.marca.nombre}"></td>
+						<td>
+							<a th:href="@{/adminBorrarOrdenador(id=${elem.id})}">Borrar</a>
+							<a th:href="@{/adminModificarOrdenador(id=${elem.id})}">Modificar</a>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
 		</section>
 	</main>
 
